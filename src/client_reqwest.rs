@@ -1,6 +1,5 @@
 use std::path::PathBuf;
 
-use async_trait::async_trait;
 use bon::Builder;
 
 use crate::trait_async::AsyncTelegramApi;
@@ -60,9 +59,6 @@ impl From<reqwest::Error> for Error {
     }
 }
 
-// Wasm target need not be `Send` because it is single-threaded
-#[cfg_attr(target_arch = "wasm32", async_trait(?Send))]
-#[cfg_attr(not(target_arch = "wasm32"), async_trait)]
 impl AsyncTelegramApi for Bot {
     type Error = Error;
 

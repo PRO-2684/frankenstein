@@ -21,7 +21,7 @@ all-features = true
 [features]
 client-reqwest = ["trait-async", "dep:reqwest", "dep:tokio", "dep:serde_json"]
 client-ureq = ["trait-sync", "dep:ureq", "dep:multipart", "dep:mime_guess", "dep:serde_json"]
-trait-async = ["dep:async-trait"]
+trait-async = []
 trait-sync = []
 
 [lints.rust]
@@ -35,7 +35,6 @@ missing_errors_doc = "allow"
 unreadable_literal = "allow"
 
 [dependencies]
-async-trait = { version = "0.1", optional = true }
 bon = "3.0.0"
 macro_rules_attribute = "0.2.0"
 mime_guess = { version = "2", optional = true }
