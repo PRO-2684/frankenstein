@@ -1,3 +1,5 @@
+#![allow(async_fn_in_trait, reason = "I don't care about Send")]
+
 use std::path::PathBuf;
 
 use crate::games::GameHighScore;
